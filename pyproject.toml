@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "s1000d-pipeline"
+version = "0.1.0"
+description = "S1000D XML to JSON AST pipeline"
+requires-python = ">=3.10"
+dependencies = [
+    "xsdata[lxml]>=24.0",
+    "lxml>=5.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
